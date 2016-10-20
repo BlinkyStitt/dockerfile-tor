@@ -1,0 +1,13 @@
+Tor
+===
+
+Container for https://www.torproject.org/
+
+
+Todo
+====
+
+* document how to run with your own config
+* document how to run arm inside the container
+* document how to run a proxy for another container
+* document how to run a hidden service connected to another container
