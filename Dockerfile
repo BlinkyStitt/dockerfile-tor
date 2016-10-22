@@ -21,8 +21,8 @@ RUN chmod 444 /etc/tor/torrc \
 VOLUME /var/lib/tor
 
 USER debian-tor
-ENTRYPOINT /usr/bin/tor
-CMD -f /etc/tor/torrc
+ENTRYPOINT ["/usr/bin/tor"]
+CMD ["-f", "/etc/tor/torrc"]
 
 # Rockerfiles have this, but don't work with Docker Hub
 # ATTACH /bin/bash -l
