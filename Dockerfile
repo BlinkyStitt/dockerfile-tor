@@ -11,6 +11,7 @@ RUN echo "deb http://deb.torproject.org/torproject.org jessie main" >/etc/apt/so
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 \
  && docker-apt-install \
     deb.torproject.org-keyring \
+    lsof \
     tor \
     tor-arm
 
