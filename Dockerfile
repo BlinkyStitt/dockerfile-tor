@@ -16,9 +16,10 @@ RUN echo "deb http://deb.torproject.org/torproject.org jessie main" >/etc/apt/so
     tor-arm
 
 # add basic configuration for Tor
-ADD torrc /etc/tor/torrc
-RUN chmod 444 /etc/tor/torrc \
- && chown -R debian-tor:debian-tor /etc/tor
+COPY torrc /etc/tor/torrc
+COPY armrc /var/lib/tor/.arm/armrc
+RUN chmod 644 /etc/tor/torrc /var/lib/tor/.arm/armrc \
+ && chown -R debian-tor:debian-tor /etc/tor /var/lib/tor
 VOLUME /var/lib/tor
 
 USER debian-tor
