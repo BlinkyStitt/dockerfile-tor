@@ -3,7 +3,7 @@
 #
 
 # todo: use alpine linux to keep our images smaller
-FROM bwstitt/library-debian:jessie
+FROM bwstitt/debian:jessie
 
 # setup Tor apt source. https://www.torproject.org/docs/debian
 # There is no need to set up apt pins: https://trac.torproject.org/projects/tor/ticket/12687
