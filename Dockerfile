@@ -12,8 +12,8 @@ RUN echo "deb http://deb.torproject.org/torproject.org jessie main" >/etc/apt/so
  && docker-apt-install \
     deb.torproject.org-keyring \
     lsof \
-    tor \
-    tor-arm
+    tor=0.3.0.9-1~d80.jessie+1 \
+    tor-arm=1.4.5.0-1
 
 # add basic configuration for Tor
 COPY torrc /etc/tor/torrc
