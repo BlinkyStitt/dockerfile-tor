@@ -1,8 +1,3 @@
-#
-# Quick and easy Tor
-#
-
-# todo: use alpine linux to keep our images smaller
 FROM bwstitt/debian:jessie
 
 # setup Tor apt source. https://www.torproject.org/docs/debian
@@ -15,7 +10,7 @@ RUN echo "deb http://deb.torproject.org/torproject.org jessie main" >/etc/apt/so
     tor=0.3.0.9-1~d80.jessie+1 \
     tor-arm=1.4.5.0-1
 
-# add basic configuration for Tor
+# add basic configuration for Tor and arm
 COPY torrc /etc/tor/torrc
 COPY armrc /var/lib/tor/.arm/armrc
 RUN chmod 644 /etc/tor/torrc /var/lib/tor/.arm/armrc \
@@ -25,7 +20,3 @@ VOLUME /var/lib/tor
 USER debian-tor
 ENTRYPOINT ["/usr/bin/tor"]
 CMD ["-f", "/etc/tor/torrc"]
-
-# Rockerfiles have this, but don't work with Docker Hub
-# ATTACH /bin/bash -l
-# PUSH bwstitt/tor:latest
